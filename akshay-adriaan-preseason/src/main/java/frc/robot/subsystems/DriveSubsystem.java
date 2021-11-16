@@ -8,22 +8,24 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.SubsystemBase
+
+;
 
 public class DriveSubsystem extends SubsystemBase {
-  private static WPI_TalonSRX leftFront;
+  private WPI_TalonSRX leftFront;
   private WPI_TalonSRX leftRear;
-  private static WPI_TalonSRX rightFront;
+  private WPI_TalonSRX rightFront;
   private WPI_TalonSRX rightRear;
 
   private DifferentialDrive drive;
 
   /** Creates a new DriveSubsystem. */
   public DriveSubsystem() {
-    WPI_TalonSRX leftFront = createAndConfigureMotor(2, false);
-    WPI_TalonSRX leftRear = createAndConfigureMotor(1, false);
-    WPI_TalonSRX rightFront = createAndConfigureMotor(4, true);
-    WPI_TalonSRX rightRear = createAndConfigureMotor(5, true);
+    leftFront = createAndConfigureMotor(2, false);
+    leftRear = createAndConfigureMotor(1, false);
+    rightFront = createAndConfigureMotor(4, true);
+     rightRear = createAndConfigureMotor(5, true);
 
     SpeedControllerGroup leftSide = new SpeedControllerGroup(leftFront, leftRear);
     SpeedControllerGroup rightSide = new SpeedControllerGroup(rightFront, rightRear);
@@ -51,7 +53,7 @@ public class DriveSubsystem extends SubsystemBase {
   }
   
 
-  public double meanSpeed() {
+  public double meanPosition() {
     return (getRightFrontPosition() + getLeftFrontPosition())/2;
 
   }
@@ -77,4 +79,7 @@ public class DriveSubsystem extends SubsystemBase {
   public void drive(double x, double y) {
     drive.arcadeDrive(x, y, true);
   }
+
+
+  
 }
