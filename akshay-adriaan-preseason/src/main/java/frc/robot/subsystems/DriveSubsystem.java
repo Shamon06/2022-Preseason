@@ -42,7 +42,6 @@ public class DriveSubsystem extends SubsystemBase {
   //public double getLeftRearPosition() {
     //return leftRear.getSelectedSensorPosition();
 
-
   public double getRightFrontPosition(){
     return rightFront.getSelectedSensorPosition();
   }
