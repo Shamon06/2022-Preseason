@@ -12,17 +12,10 @@ import frc.robot.subsystems.DriveSubsystem;
 
 public class driveStraight extends CommandBase {
 
-
-  
   private double speed;
   private double distance;
   public DriveSubsystem driveSubsystem;
 
-
-
-
-  
-  
   /** Creates a new driveStraight. */
   public driveStraight(double speed, double distance, DriveSubsystem driveSubsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
@@ -45,7 +38,7 @@ public class driveStraight extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() { // TODO is broken, need compatibility
+  public void execute() {
     if (driveSubsystem.meanPosition() < distance) {
       driveSubsystem.drive(speed, distance);
       
@@ -63,7 +56,9 @@ public class driveStraight extends CommandBase {
   public boolean isFinished() {
     if (driveSubsystem.meanPosition() >= distance) {
       return true;
-    } else {
+    } 
+    
+    else {
       return false;
     }
   }
