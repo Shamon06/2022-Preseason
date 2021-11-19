@@ -10,14 +10,14 @@ import frc.robot.subsystems.DriveSubsystem;
 
 
 
-public class driveStraight extends CommandBase {
+public class DriveStraight extends CommandBase {
 
   private double speed;
   private double distance;
   public DriveSubsystem driveSubsystem;
 
   /** Creates a new driveStraight. */
-  public driveStraight(double speed, double distance, DriveSubsystem driveSubsystem) {
+  public DriveStraight(double speed, double distance, DriveSubsystem driveSubsystem) {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveSubsystem);
     this.driveSubsystem = driveSubsystem;
